@@ -16,12 +16,12 @@ h2 {
   background-position: center;
 }
 
-/* .names {
+main {
   background-image: url("./image/cookingtime.jpg");
   background-position: center;
   background-size: cover;
   background: no-repeat;
-} */
+}
 
 ul {
   font-size: 25px;
@@ -40,7 +40,7 @@ ul {
   width: 400px;
   height: 400px;
   background-position: center;
-  background-size: auto;
+  background-size: cover;
 }
 
 .info {
@@ -48,6 +48,10 @@ ul {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  margin: 100px auto;
+  margin: auto;
+  text-align: center;
+  color: lavenderblush;
+  background-color: olivedrab;
+
 }
 

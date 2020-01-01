@@ -3,7 +3,6 @@ import { Route, Link } from "react-router-dom";
 import Characters from "./components/Characters";
 import CharacterData from "./components/CharacterData";
 import BadImage from "./image/breakingbad.jpg";
-import Cook from "./image/cookingtime.jpg"
 import './App.css';
 
 class App extends Component {
@@ -17,7 +16,6 @@ class App extends Component {
     fetch("http://localhost:4010/")
       .then(res => res.json())
         .then(res => {
-          //console.log(res)
           this.setState({ characterData: res })
         })
   }
@@ -42,7 +40,6 @@ class App extends Component {
         
         <main className="container">
           <Route path="/characters" exact component={Characters}>
-          {/* <img className="cook" src={Cook} /> */}
           <ul>{ charData }</ul>
           </Route>
           <Route path="/characterData" exact component={CharacterData}>
