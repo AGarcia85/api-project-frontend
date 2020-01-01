@@ -7,7 +7,7 @@ class Characters extends Component {
         console.log(this.props.name)
         
         return (
-            <div>
+            <div className="names">
                 <Link to="characterData">
                     <ul>
                         {this.props.name}

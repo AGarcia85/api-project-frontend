@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import Characters from "./components/Characters";
-import CharacterData from "./components/CharacterData"
+import CharacterData from "./components/CharacterData";
+import BadImage from "./image/breakingbad.jpg";
+import Cook from "./image/cookingtime.jpg"
 import './App.css';
 
 class App extends Component {
@@ -21,8 +23,9 @@ class App extends Component {
   }
   render() {
     let charData = this.state.characterData.map(char => {
-      return( <Characters key={char.name} name={char.name} />)
+      return( <Characters key={char.id} name={char.name} />)
     })
+    
     return (
       <div>
         <nav>
@@ -33,15 +36,18 @@ class App extends Component {
             <h2>Characters</h2>
           </Link>
         </nav>
-        <h1 className="title">Breaking Bad</h1>
+        <Route path="/" exact component={App}>
+          <img className="title" src={BadImage} />
+        </Route>
+        
         <main className="container">
-          <Route path="/characters" component={Characters}>
-          <Route path="/characterData" component={CharacterData} />
+          <Route path="/characters" exact component={Characters}>
+          {/* <img className="cook" src={Cook} /> */}
+          <ul>{ charData }</ul>
+          </Route>
+          <Route path="/characterData" exact component={CharacterData}>
           <CharacterData characterData={this.state.characterData} />
-          <ul>
-            { charData }
-          </ul>
-          </Route>  
+          </Route>
         </main>
       </div>
     )

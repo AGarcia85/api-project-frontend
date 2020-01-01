@@ -11,15 +11,23 @@ h2 {
 }
 
 .title {
-  font-size: 60px;
-  text-align: center;
-  font-weight: bolder;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
 }
+
+/* .names {
+  background-image: url("./image/cookingtime.jpg");
+  background-position: center;
+  background-size: cover;
+  background: no-repeat;
+} */
 
 ul {
   font-size: 25px;
   font-weight: bold;
   font-style: italic;
+  color: black;
 }
 
 .charName {
@@ -28,9 +36,18 @@ ul {
   font-style: italic;
 }
 
-img {
-  width: 50%;
-  height: 50%;
+.charImage {
+  width: 400px;
+  height: 400px;
   background-position: center;
   background-size: auto;
 }
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+
