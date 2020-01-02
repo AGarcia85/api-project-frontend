@@ -13,13 +13,15 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    fetch("http://localhost:4010/")
+    fetch("https://alexg-api-backend.herokuapp.com/")
       .then(res => res.json())
         .then(res => {
-          this.setState({ characterData: res })
-        })
-  }
+          this.setState({ characterData: res }) 
+        })  
+        console.log(this.state.characterData)    
+  }  
   render() {
+    
     let charData = this.state.characterData.map(char => {
       return( <Characters key={char.id} name={char.name} />)
     })
@@ -35,7 +37,7 @@ class App extends Component {
           </Link>
         </nav>
         <Route path="/" exact component={App}>
-          <img className="title" src={BadImage} />
+          <img className="title" src={BadImage} alt="hiesenburg" />
         </Route>
         
         <main className="container">
