@@ -24,10 +24,12 @@ main {
 }
 
 ul {
+  background-color: transparent;
   font-size: 25px;
   font-weight: bold;
   font-style: italic;
   color: black;
+  padding: 5px;
 }
 
 .charName {
@@ -44,14 +46,15 @@ ul {
 }
 
 .info {
-  display: flex;
-  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   margin: auto;
   text-align: center;
   color: lavenderblush;
-  background-color: olivedrab;
+  background-image: url("./image/heisenbergBlue.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
 
 }
 

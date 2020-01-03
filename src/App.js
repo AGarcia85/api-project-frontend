@@ -10,16 +10,25 @@ class App extends Component {
     super(props)
     this.state = {
       characterData: [],
+      singleData: []
     }
+    this.singleChar = this.singleChar.bind(this);
   }
   componentDidMount() {
     fetch("https://alexg-api-backend.herokuapp.com/")
       .then(res => res.json())
         .then(res => {
           this.setState({ characterData: res }) 
+          console.log("RES")
+        console.log(this.state.characterData) 
+        console.log("WHTH") 
         })  
-        console.log(this.state.characterData)    
-  }  
+          
+  }
+  singleChar() {
+    this.setState({ singleData: this.state.characterData })
+  }
+  
   render() {
     
     let charData = this.state.characterData.map(char => {
@@ -44,9 +53,15 @@ class App extends Component {
           <Route path="/characters" exact component={Characters}>
           <ul>{ charData }</ul>
           </Route>
-          <Route path="/characterData" exact component={CharacterData}>
-          <CharacterData characterData={this.state.characterData} />
-          </Route>
+          <Route path="/characterData/:character"
+          render={routerProps => (
+          <CharacterData
+            {...routerProps}
+            {...this.state}
+            singleChar={this.singleChar}
+          />
+          )}
+          />
         </main>
       </div>
     )
