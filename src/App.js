@@ -36,7 +36,7 @@ class App extends Component {
     })
     
     return (
-      <div>
+      <div className="container">
         <nav>
           <Link to="/">
             <h2>Home</h2>
@@ -49,9 +49,11 @@ class App extends Component {
           <img className="title" src={BadImage} alt="hiesenburg" />
         </Route>
         
-        <main className="container">
+        <main >
           <Route path="/characters" exact component={Characters}>
+            <div className="list">
           <ul>{ charData }</ul>
+          </div>
           </Route>
           <Route path="/characterData/:character"
           render={routerProps => (

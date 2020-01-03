@@ -2,11 +2,13 @@ import React, { Component } from "react"
 
 
 class CharacterData extends Component {
-    render() {
+    componentDidMount() {
         const character = this.props.match.params.character;
-        console.log(character)
+        console.log(character)   
+    } 
+    render() {
         const charInfo = this.props.characterData.filter(item => item.name === this.props.match.params.character)
-           
+
         return (
             <div className="info">
                 <h1>{charInfo[0].name}</h1>
