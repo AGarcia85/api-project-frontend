@@ -15,13 +15,11 @@ class App extends Component {
     this.singleChar = this.singleChar.bind(this);
   }
   componentDidMount() {
-    fetch("https://alexg-api-backend.herokuapp.com/")
+    fetch(" ")
       .then(res => res.json())
         .then(res => {
           this.setState({ characterData: res }) 
-          console.log("RES")
         console.log(this.state.characterData) 
-        console.log("WHTH") 
         })  
           
   }
