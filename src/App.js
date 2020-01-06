@@ -15,7 +15,7 @@ class App extends Component {
     this.singleChar = this.singleChar.bind(this);
   }
   componentDidMount() {
-    fetch(" ")
+    fetch("https://alexg-api-backend.herokuapp.com/")
       .then(res => res.json())
         .then(res => {
           this.setState({ characterData: res }) 
