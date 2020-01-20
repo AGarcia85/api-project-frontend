@@ -36,6 +36,10 @@ h2 {
   justify-content: space-around;
 }
 
+button {
+  width: 100px;
+}
+
 ul {
   font-size: 25px;
   font-weight: bold;
@@ -71,4 +75,30 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.contain {
+  background-image: url("./image/blueheisenburg.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+}
+
+form input {
+  display: block;
+	width: 30%;
+	height: 100px;
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.addChar{
+  width: 150px;
+  height: 85px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: darkblue;
+  color: antiquewhite;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import Characters from "./components/Characters";
 import CharacterData from "./components/CharacterData";
+import Create from "./components/Create"
 import BadImage from "./image/breakingbad.jpg";
 import './App.css';
 
@@ -10,7 +11,7 @@ class App extends Component {
     super(props)
     this.state = {
       characterData: [],
-      singleData: []
+      singleData: [],
     }
     this.singleChar = this.singleChar.bind(this);
   }
@@ -30,7 +31,7 @@ class App extends Component {
   render() {
     
     let charData = this.state.characterData.map(char => {
-      return( <Characters key={char.id} name={char.name} />)
+      return( <Characters key={char.id} name={char.name} addNew={this.addNew}/>)
     })
     
     return (
@@ -41,6 +42,9 @@ class App extends Component {
           </Link>
           <Link to="/characters">
             <h2>Characters</h2>
+          </Link>
+          <Link to="/create">
+            <h2>Create Character</h2>
           </Link>
         </nav>
         <Route path="/" exact component={App}>
@@ -53,6 +57,7 @@ class App extends Component {
           <ul>{ charData }</ul>
           </div>
           </Route>
+          <Route path="/create" component={Create} />
           <Route path="/characterData/:character"
           render={routerProps => (
           <CharacterData
