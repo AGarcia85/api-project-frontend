@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Create extends Component {
+class Update extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,8 +12,6 @@ class Create extends Component {
             status: "",
             portrayed: ""
         };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange = (e) => {
@@ -30,8 +28,6 @@ class Create extends Component {
             .then(err => {
                 console.log(err)
         });
-
-        window.location = '/characters'
       }
 
       render() {
@@ -43,36 +39,45 @@ class Create extends Component {
                             type='text'
                             name='name'
                             placeholder='Character Name'
-                            onChange={this.handleChange} />
+                            
+                            onChange={this.handleChange}
+                        />
                         <input
                             type='text'
                             name='birthday'
                             placeholder='Birthday'
-                            onChange={this.handleChange} />
+                            
+                            onChange={this.handleChange}
+                        />
                         <input
                             type='text'
                             name='occupation'
                             placeholder='Occupation'
-                            onChange={this.handleChange} />
+                            
+                            onChange={this.handleChange}
+                        />
                         <input
                             type='text'
                             name='nickname'
                             placeholder='Nickname'
-                            onChange={this.handleChange} />
+                            
+                            onChange={this.handleChange}
+                        />
                         <input
                             type='text'
                             name='status'
                             placeholder='Status'
-                            onChange={this.handleChange} />
+                            
+                            onChange={this.handleChange}
+                        />
                         <input
                             type='text'
                             name='portrayed'
                             placeholder='Portrayed by'
-                            onChange={this.handleChange} />
-                        <button 
-                            type='submit' 
-                            className='addChar' 
-                            onSubmit={this.handleSubmit}>Submit Character</button>
+                            
+                            onChange={this.handleChange}
+                        />
+                        <button type='submit' className='addChar' onSubmit={this.handleSubmit}>Submit Character</button>
                     </form>    
                 </div>
 
@@ -82,4 +87,4 @@ class Create extends Component {
       
 }
 
-export default Create
+export default Update

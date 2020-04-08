@@ -36,9 +36,9 @@ h2 {
   justify-content: space-around;
 }
 
-button {
+/* button {
   width: 100px;
-}
+} */
 
 ul {
   font-size: 25px;
@@ -87,18 +87,34 @@ a {
 form input {
   display: block;
 	width: 30%;
-	height: 100px;
+	height: 80px;
   margin: 10px 0;
   font-size: 20px;
   font-weight: bold;
 }
 
 .addChar{
-  width: 150px;
-  height: 85px;
+  width: 30%;
+  height: 80px;
   text-align: center;
   font-size: 25px;
   font-weight: bold;
   background-color: darkblue;
   color: antiquewhite;
+}
+
+.addChar:hover {
+  cursor: pointer;
+  background-color: darkred;
+}
+
+.deleteChar {
+  width: 20%;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: red;
+  color: aliceblue;
 }

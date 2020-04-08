@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import Characters from "./components/Characters";
 import CharacterData from "./components/CharacterData";
-import Create from "./components/Create"
+import Create from "./components/Create";
+// import Update from "./components/UpdateCharacter";
+// import Delete from "./components/DeleteCharacter";
 import BadImage from "./image/breakingbad.jpg";
 import './App.css';
 
@@ -30,8 +32,8 @@ class App extends Component {
   
   render() {
     
-    let charData = this.state.characterData.map(char => {
-      return( <Characters key={char.id} name={char.name} addNew={this.addNew}/>)
+    let charData = this.state.characterData.map((char, id) => {
+      return( <Characters key={id} name={char.name} addNew={this.addNew}/>)
     })
     
     return (
@@ -46,6 +48,12 @@ class App extends Component {
           <Link to="/create">
             <h2>Create Character</h2>
           </Link>
+          {/* <Link to="/update">
+            <h2>Update Character</h2>
+          </Link>
+          <Link to="/delete">
+            <h2>Delete Character</h2>
+          </Link> */}
         </nav>
         <Route path="/" exact component={App}>
           <img className="title" src={BadImage} alt="hiesenburg" />
@@ -58,6 +66,8 @@ class App extends Component {
           </div>
           </Route>
           <Route path="/create" component={Create} />
+          {/* <Route path="/update:character" component={Update} />
+          <Route path="/delete" component={Delete} /> */}
           <Route path="/characterData/:character"
           render={routerProps => (
           <CharacterData
